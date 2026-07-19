@@ -1,0 +1,197 @@
+================================================================================
+GUÍA COMPLETA DE BASE DE DATOS
+Escuela Técnica Pedro Garcia Leal
+================================================================================
+
+CREDENCIALES DE ADMINISTRADOR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Usuario: admin
+Contraseña: admin123
+
+Nota: Solo el administrador puede acceder al módulo de Gestión de Estudiantes.
+
+
+ESTRUCTURA DE LA BASE DE DATOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+La base de datos utiliza SQLite (no requiere instalación adicional).
+Ubicación: /liceo/datos/sistema.db
+
+Se crea automáticamente con 3 tablas:
+
+1. TABLA: estudiantes
+   ├─ id (ID único)
+   ├─ cedula (Cédula de identidad - única)
+   ├─ nombre (Nombre del estudiante)
+   ├─ apellido (Apellido del estudiante)
+   ├─ fecha_nacimiento (Fecha de nacimiento)
+   ├─ genero (Masculino/Femenino)
+   ├─ nivel_academico (1er, 2do, 3er Año)
+   ├─ telefono (Número de teléfono)
+   ├─ email (Correo electrónico)
+   ├─ direccion (Dirección de residencia)
+   ├─ ciudad (Ciudad)
+   ├─ estado_civil (Soltero/Casado)
+   ├─ seccion (Sección o grado)
+   ├─ fecha_inscripcion (Fecha de registro automática)
+   └─ estado (Activo/Inactivo)
+
+2. TABLA: representantes
+   ├─ id (ID único)
+   ├─ cedula (Cédula de identidad - única)
+   ├─ nombre (Nombre del representante)
+   ├─ apellido (Apellido del representante)
+   ├─ parentesco (Padre/Madre/Tutor)
+   ├─ telefono (Número de teléfono)
+   ├─ email (Correo electrónico)
+   ├─ direccion (Dirección de residencia)
+   ├─ ciudad (Ciudad)
+   ├─ ocupacion (Profesión u ocupación)
+   └─ estado (Activo/Inactivo)
+
+3. TABLA: estudiante_representante
+   ├─ id (ID único)
+   ├─ estudiante_id (Referencia a estudiantes)
+   ├─ representante_id (Referencia a representantes)
+   └─ tipo_responsabilidad (Padre/Madre/Tutor/Apoderado)
+
+
+CÓMO ACCEDER AL MÓDULO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abre http://localhost/liceo/
+2. Inicia sesión con:
+   - Usuario: admin
+   - Contraseña: admin123
+3. En la página de inicio, verás el módulo "Gestión de Estudiantes"
+4. Haz clic en él para acceder
+
+
+FUNCIONALIDADES DEL MÓDULO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ VER LISTA DE ESTUDIANTES
+  - Tabla con todos los estudiantes registrados
+  - Información: Cédula, Nombre, Apellido, Nivel, Sección, Email, Estado
+  - Ordenados alfabéticamente por nombre
+
+✓ AGREGAR NUEVO ESTUDIANTE
+  - Clic en "Nuevo Estudiante"
+  - Rellenar todos los campos disponibles
+  - Campos obligatorios: Cédula, Nombre, Apellido
+  - Campos opcionales: Email, Teléfono, Dirección, etc.
+  - Seleccionar estado (Activo/Inactivo)
+  - Guardar los datos
+
+✓ EDITAR ESTUDIANTE
+  - En la tabla, clic en "Editar" en la fila del estudiante
+  - Modificar cualquier campo
+  - Guardar los cambios
+
+✓ ELIMINAR ESTUDIANTE
+  - En la tabla, clic en "Eliminar" en la fila del estudiante
+  - Confirmar la acción
+  - El registro se elimina permanentemente
+
+
+CAMPOS DISPONIBLES PARA ESTUDIANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+* Cédula (OBLIGATORIO)
+  - Número único de identificación
+  - No se pueden duplicar
+
+* Nombre (OBLIGATORIO)
+  - Primer nombre del estudiante
+
+* Apellido (OBLIGATORIO)
+  - Apellido del estudiante
+
+* Género
+  - Opciones: Masculino / Femenino
+
+* Fecha de Nacimiento
+  - Formato: YYYY-MM-DD
+
+* Nivel Académico
+  - Opciones: 1er Año / 2do Año / 3er Año
+
+* Sección
+  - Ejemplo: A, B, C, etc.
+
+* Estado Civil
+  - Opciones: Soltero / Casado
+
+* Email
+  - Correo electrónico del estudiante
+
+* Teléfono
+  - Número de contacto
+
+* Dirección
+  - Dirección de residencia completa
+
+* Ciudad
+  - Ciudad de residencia
+
+* Estado
+  - Activo: Estudiante actualmente inscrito
+  - Inactivo: Estudiante graduado o retirado
+
+
+BÚSQUEDA Y FILTRADO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Los estudiantes se muestran ordenados alfabéticamente por nombre.
+La tabla mostrará todos los registros activos e inactivos.
+
+
+MEDIDAS DE SEGURIDAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Acceso restringido solo a administradores
+✓ Validación de datos en formularios
+✓ Protección contra duplicados de cédula
+✓ Las acciones se registran automáticamente
+✓ Confirmación antes de eliminar registros
+
+
+SOLUCIÓN DE PROBLEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+P: ¿Por qué no puedo acceder al módulo de Gestión de Estudiantes?
+R: Asegúrate de estar logueado como administrador.
+   Usuario: admin, Contraseña: admin123
+
+P: ¿Puedo editar la cédula de un estudiante?
+R: Sí, pero debe ser única (no puede repetirse).
+
+P: ¿Se pueden recuperar estudiantes eliminados?
+R: No, la eliminación es permanente. Asegúrate antes de eliminar.
+
+P: ¿Qué pasa si no lleno los campos opcionales?
+R: Los campos opcionales se guardan como vacíos (NULL).
+   Solo los campos obligatorios son necesarios para guardar.
+
+
+FUTURAS MEJORAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se puede agregar:
+- Módulo de representantes con relación a estudiantes
+- Búsqueda y filtrado avanzado
+- Exportar datos a Excel/PDF
+- Historial de cambios
+- Fotos de identificación de estudiantes
+- Antecedentes médicos
+- Calificaciones y rendimiento académico
+
+
+CONTACTO Y SOPORTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para más ayuda, utiliza el Centro de Ayuda en la página de login:
+http://localhost/liceo/ayuda.php
+
+================================================================================

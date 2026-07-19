@@ -1,0 +1,188 @@
+================================================================================
+SISTEMA DE SEGURIDAD - ESCUELA TÉCNICA PEDRO GARCIA LEAL
+================================================================================
+
+DESCRIPCIÓN:
+Se ha implementado un sistema de autenticación con 3 niveles de acceso:
+
+================================================================================
+NIVELES DE ACCESO
+================================================================================
+
+1. ADMINISTRADOR (Acceso Total)
+   ├─ Ver todos los módulos
+   ├─ Editar contenido
+   ├─ Cargar y descargar archivos
+   └─ Acceso completo al sistema
+
+2. REPRESENTANTE (Solo Lectura)
+   ├─ Ver: Noticias, Pasantías, Labor Social, Representante
+   ├─ Descargar archivos
+   ├─ Cargar archivos en los módulos
+   └─ NO puede editar contenido existente
+
+3. USUARIO (Noticias Solamente)
+   ├─ Ver solo el módulo de Noticias
+   ├─ Ver publicaciones y comunicados
+   └─ NO tiene acceso a otros módulos
+
+================================================================================
+CREDENCIALES DE PRUEBA
+================================================================================
+
+Usuario: admin
+Contraseña: admin123
+Rol: Administrador (Acceso Total)
+
+Usuario: representante
+Contraseña: rep123
+Rol: Representante (Solo Ver)
+
+Usuario: usuario
+Contraseña: user123
+Rol: Usuario (Solo Noticias)
+
+================================================================================
+CÓMO ACCEDER AL SISTEMA
+================================================================================
+
+1. Abre tu navegador web
+2. Ve a: http://localhost/liceo/
+3. Se redirigirá automáticamente a: http://localhost/liceo/login.php
+4. Ingresa tu usuario y contraseña
+5. Se abrirá el panel principal con tus módulos asignados
+
+================================================================================
+FLUJO DE ACCESO POR ROL
+================================================================================
+
+ADMINISTRADOR:
+  login.php → index.php → [Todos los módulos disponibles]
+             ├─ Noticias
+             ├─ Pasantías
+             ├─ Labor Social
+             └─ Representante
+
+REPRESENTANTE:
+  login.php → index.php → [Solo módulos permitidos]
+             ├─ Noticias
+             ├─ Pasantías
+             ├─ Labor Social
+             └─ Representante
+
+USUARIO:
+  login.php → index.php → [Solo Noticias]
+             └─ Noticias (Solo lectura)
+
+================================================================================
+FUNCIONALIDADES POR MÓDULO
+================================================================================
+
+NOTICIAS (Accesible para: Administrador, Representante, Usuario)
+✓ Ver noticias del liceo
+✓ Filtrar por categoría
+✓ Solo lectura para todos
+
+PASANTÍAS (Accesible para: Administrador, Representante)
+✓ Cargar planillas de control
+✓ Descargar planillas
+✓ Eliminar archivos
+✓ Ver normativa de pasantías
+
+LABOR SOCIAL (Accesible para: Administrador, Representante)
+✓ Cargar formatos de control de horas
+✓ Cargar informe de labor social
+✓ Descargar archivos
+✓ Eliminar archivos
+
+REPRESENTANTE (Accesible para: Administrador, Representante)
+✓ Ver información general de la institución
+✓ Ver y cargar horarios de estudiantes
+✓ Descargar planilla de inscripción en PDF
+✓ Imprimir planilla
+
+================================================================================
+PROTECCIÓN DE PÁGINAS
+================================================================================
+
+Las siguientes páginas están protegidas:
+
+index.php                           → Requiere Login
+modulos/noticias.php               → Requiere Login (Usuario+)
+modulos/pasantias.php              → Requiere Login (Representante+)
+modulos/labor-social.php           → Requiere Login (Representante+)
+modulos/representante.php          → Requiere Login (Representante+)
+modulos/generar-planilla.php       → Requiere Login (Representante+)
+
+Páginas públicas (sin protección):
+login.php                           → Página de inicio de sesión
+no-autorizado.php                  → Página de error de acceso
+
+================================================================================
+CERRAR SESIÓN
+================================================================================
+
+Para cerrar sesión, puedes:
+1. Hacer clic en "Cerrar Sesión" en la esquina superior derecha
+2. También aparece en cada módulo
+
+Después de cerrar sesión, se redirigirá a login.php
+
+================================================================================
+SEGURIDAD
+================================================================================
+
+✓ Las contraseñas están encriptadas con password_hash()
+✓ Las sesiones están controladas con $_SESSION
+✓ Se validan permisos en cada página
+✓ Los usuarios no autorizados son redirigidos a no-autorizado.php
+
+================================================================================
+ESTRUCTURA DE ARCHIVOS
+================================================================================
+
+liceo/
+├── login.php                       → Página de inicio de sesión
+├── index.php                       → Panel principal (protegido)
+├── cerrar-sesion.php              → Cerrar sesión
+├── no-autorizado.php              → Página de acceso denegado
+├── includes/
+│   └── auth.php                   → Sistema de autenticación
+├── modulos/
+│   ├── noticias.php               → Módulo Noticias (protegido)
+│   ├── pasantias.php              → Módulo Pasantías (protegido)
+│   ├── labor-social.php           → Módulo Labor Social (protegido)
+│   ├── representante.php          → Módulo Representante (protegido)
+│   └── generar-planilla.php       → Generador de PDF (protegido)
+├── assets/
+│   ├── css/
+│   │   ├── styles.css
+│   │   └── representante.css
+│   └── js/
+│       └── main.js
+└── datos/
+    ├── pasantias/                  → Archivos de pasantías
+    ├── labor-social/               → Archivos de labor social
+    ├── horarios/                   → Horarios de estudiantes
+    └── descargas/                  → Archivos descargables
+
+================================================================================
+NOTAS IMPORTANTES
+================================================================================
+
+• Las credenciales de prueba están mostradas en la página de login
+• Recomendamos cambiar las contraseñas en un entorno de producción
+• El archivo auth.php contiene toda la lógica de autenticación
+• Los permisos se validan en cada página para mayor seguridad
+• Los usuarios solo ven los módulos para los cuales tienen permiso
+
+================================================================================
+SOPORTE
+================================================================================
+
+Para más información sobre el sistema de seguridad, revisa:
+- includes/auth.php         → Lógica de autenticación
+- login.php                → Formulario de login
+- index.php               → Panel principal con filtrado de módulos
+
+================================================================================

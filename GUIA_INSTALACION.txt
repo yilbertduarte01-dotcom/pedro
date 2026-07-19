@@ -1,0 +1,199 @@
+================================================================================
+GUÍA COMPLETA DE INSTALACIÓN - ESCUELA TÉCNICA PEDRO GARCIA LEAL
+================================================================================
+
+SISTEMA DE GESTIÓN ESCOLAR CON 3 MÓDULOS
+Versión: 1.0
+Requisitos: Laragon 6.0+, Navegador Web moderno
+
+================================================================================
+PASO A PASO - INSTALACIÓN EN WINDOWS CON LARAGON
+================================================================================
+
+PASO 1: DESCARGA DEL PROYECTO
+==============================
+1. Abre v0.app en tu navegador
+2. Busca tu proyecto "LICEO SYSTEM SETUP"
+3. Haz clic en los 3 puntos (⋮) en la esquina superior derecha
+4. Selecciona "Download ZIP"
+5. El archivo se descargará a tu carpeta de Descargas
+
+PASO 2: EXTRAE EL ARCHIVO ZIP
+==============================
+1. Abre la carpeta de Descargas
+2. Busca el archivo descargado (probablemente con nombre similar a "v0-project")
+3. Haz clic derecho sobre él
+4. Selecciona "Extraer todo..." o "Extract All"
+5. Espera a que se termine de extraer
+
+PASO 3: LOCALIZA LA CARPETA "LICEO"
+===================================
+1. Abre la carpeta extraida
+2. Busca la carpeta llamada "liceo" (es la que necesitas)
+3. Anota su ubicación
+
+PASO 4: COPIA LA CARPETA A LARAGON
+==================================
+1. Abre el Explorador de Windows
+2. Navega a: C:\laragon\www\
+3. Copia la carpeta "liceo" que extrajiste en el paso anterior
+4. Pégala dentro de C:\laragon\www\
+5. Resultado esperado: C:\laragon\www\liceo\
+
+PASO 5: INICIA LARAGON
+=======================
+1. Busca y abre Laragon (está en tu menú de inicio)
+2. Haz clic en el botón "Start All" (debe ponerse verde)
+3. Espera a que se inicien los servicios
+4. Verifica que diga "Apache: Started"
+
+PASO 6: ACCEDE AL SISTEMA
+==========================
+1. Abre tu navegador web (Chrome, Firefox, Edge)
+2. En la barra de direcciones escribe: http://localhost/liceo/
+3. ENTER para navegar
+4. ¡Deberías ver la página de LOGIN!
+
+PASO 7: INICIA SESIÓN
+=======================
+Usa una de las 3 credenciales de prueba:
+
+ADMINISTRADOR (acceso total):
+Usuario: admin
+Contraseña: admin123
+
+REPRESENTANTE (solo lectura):
+Usuario: representante
+Contraseña: rep123
+
+USUARIO (solo noticias):
+Usuario: usuario
+Contraseña: user123
+
+================================================================================
+INSTRUCCIONES DE USO - CENTRO DE AYUDA
+================================================================================
+
+Si en cualquier momento necesitas ayuda, hay dos formas:
+
+OPCIÓN 1 - DESDE EL LOGIN:
+1. En la página de login, busca el enlace "¿Necesitas ayuda? Centro de Ayuda"
+2. Haz clic en él
+3. Se abre un chatbot con respuestas a preguntas frecuentes
+
+OPCIÓN 2 - ACCEDER DIRECTAMENTE:
+1. Desde el navegador, ve a: http://localhost/liceo/ayuda.php
+2. Se abre el centro de ayuda del sistema
+
+PREGUNTAS DISPONIBLES EN EL CHATBOT:
+1. ¿Cómo instalar el sistema?
+2. ¿Cómo funciona la seguridad y el login?
+3. ¿Cuáles son los requisitos del sistema?
+
+================================================================================
+ESTRUCTURA DE MÓDULOS
+================================================================================
+
+El sistema tiene 4 módulos principales:
+
+NOTICIAS (accesible para todos)
+- Ver publicaciones del liceo
+- Todas las categorías de novedades
+- Acceso: Usuario, Representante, Administrador
+
+PASANTÍAS (representante y administrador)
+- Formatos de control
+- Evaluaciones
+- Normativa de pasantías
+- Acceso: Representante, Administrador
+
+LABOR SOCIAL (representante y administrador)
+- Formatos de control de horas
+- Informes de labor social
+- Acceso: Representante, Administrador
+
+REPRESENTANTE (representante y administrador)
+- Información general de la institución
+- Horarios de estudiantes
+- Descargar planilla de inscripción en PDF
+- Acceso: Representante, Administrador
+
+================================================================================
+SOLUCIÓN DE PROBLEMAS
+================================================================================
+
+PROBLEMA: "Error 404 - Página no encontrada"
+SOLUCIÓN: 
+- Verifica que escribiste correctamente: http://localhost/liceo/
+- Confirma que Laragon está ejecutándose (botón Start All verde)
+- Revisa que la carpeta está en C:\laragon\www\liceo\
+
+PROBLEMA: "No puedo acceder a un módulo"
+SOLUCIÓN:
+- Algunos módulos requieren rol de Representante o Administrador
+- Intenta con usuario: admin y contraseña: admin123
+- Verifica que iniciaste sesión correctamente
+
+PROBLEMA: "Los archivos no se descargan"
+SOLUCIÓN:
+- Crea manualmente las carpetas en: liceo\datos\
+  - liceo\datos\horarios\
+  - liceo\datos\pasantias\
+  - liceo\datos\labor-social\
+
+PROBLEMA: "El chatbot de ayuda no abre"
+SOLUCIÓN:
+- Ve directamente a: http://localhost/liceo/ayuda.php
+- Si no funciona, reinicia Laragon
+
+================================================================================
+CARACTERÍSTICAS PRINCIPALES
+================================================================================
+
+✓ Sistema de seguridad con 3 roles
+✓ Autenticación sin base de datos
+✓ 4 módulos funcionales
+✓ Carga y descarga de archivos
+✓ Generación de PDF para planillas
+✓ Diseño responsivo (móvil, tablet, PC)
+✓ Colores institucionales (Amarillo y Marrón)
+✓ Centro de ayuda integrado
+✓ Totalmente gratuito y local
+
+================================================================================
+INFORMACIÓN TÉCNICA
+================================================================================
+
+Tecnologías utilizadas:
+- PHP (sin base de datos)
+- HTML5
+- CSS3
+- JavaScript
+
+Navegadores soportados:
+- Chrome (recomendado)
+- Firefox
+- Edge
+- Safari
+
+Sistema Operativo:
+- Windows 10+
+- Mac OS 10.14+
+- Linux (con Laragon/Apache)
+
+================================================================================
+CONTATOS Y SOPORTE
+================================================================================
+
+Si necesitas más ayuda:
+1. Usa el Centro de Ayuda integrado en el sistema (ayuda.php)
+2. Consulta el archivo INSTRUCCIONES_SEGURIDAD.txt
+3. Revisa este archivo nuevamente
+
+================================================================================
+
+¡Gracias por usar el Sistema de Gestión de la Escuela Técnica Pedro Garcia Leal!
+
+Versión 1.0 - 2024
+
+================================================================================

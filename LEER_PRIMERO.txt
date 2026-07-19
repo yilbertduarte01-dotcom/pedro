@@ -1,0 +1,156 @@
+================================================================================
+  SISTEMA DE GESTIÓN ESCOLAR - ESCUELA TÉCNICA PEDRO GARCIA LEAL
+  INSTRUCCIONES DE INSTALACIÓN Y CONFIGURACIÓN
+================================================================================
+
+PASO 1: INICIALIZAR LA BASE DE DATOS
+================================================================================
+
+Después de descargar el proyecto, DEBES limpiar y recrear la base de datos.
+
+1. Abre tu navegador y accede a:
+   http://localhost/liceo/limpiar-bd.php
+
+2. Verás una página de advertencia. Lee cuidadosamente.
+
+3. Marca el checkbox: "Entiendo que todos los datos serán eliminados y acepto continuar"
+
+4. Haz clic en el botón: "🗑️ Limpiar Base de Datos"
+
+5. Se eliminará todo y se recrearán automáticamente todas las tablas
+   con la estructura correcta.
+
+6. Serás redirigido al inicio en 2 segundos.
+
+7. ¡LISTO! Ya puedes usar el sistema sin problemas.
+
+
+PASO 2: INICIAR SESIÓN
+================================================================================
+
+Usa una de estas cuentas para probar:
+
+Profesor:
+  Usuario: profesor
+  Contraseña: profesor123
+
+Representante:
+  Usuario: representante
+  Contraseña: representante123
+
+Administrador:
+  Usuario: admin
+  Contraseña: admin123
+
+Estudiante:
+  Usuario: estudiante
+  Contraseña: estudiante123
+
+
+PASO 3: EXPLORAR LOS MÓDULOS
+================================================================================
+
+Acceso según tu rol:
+
+PROFESOR:
+  - Profesor: Crear secciones, agregar actividades, temas vistos
+  - Reuniones: Crear reuniones para representantes
+  - Noticias: Leer comunicados
+  - Centro de Ayuda: Chat con bot inteligente
+
+REPRESENTANTE:
+  - Representante: Ver información de sus hijos
+  - Reuniones: Ver reuniones de su sección y confirmar asistencia
+  - Pasantías: Ver información de pasantías
+  - Labor Social: Registrar horas de trabajo social
+  - Noticias: Leer comunicados
+
+ADMINISTRADOR:
+  - Todos los módulos disponibles
+  - Gestión de Estudiantes: Administrar toda la información
+  - Asistencias: Generar códigos QR
+
+
+PASO 4: DOCUMENTACIÓN
+================================================================================
+
+Archivos de ayuda en la raíz del proyecto:
+
+- REUNIONES.md: Guía completa del módulo de reuniones
+- INSTRUCCIONES.txt: Instrucciones generales del sistema
+- COMUNICACION.md: (Antiguo, ya no se usa)
+
+
+PASO 5: SI HAY ERRORES
+================================================================================
+
+Si ves mensajes de error de SQL:
+
+1. Accede a http://localhost/liceo/limpiar-bd.php
+
+2. Limpia nuevamente la base de datos
+
+3. Recarga la página problematica
+
+
+CARACTERÍSTICAS PRINCIPALES
+================================================================================
+
+✓ Módulo Profesor:
+  - Crear secciones dinámicas
+  - Agregar actividades con descripción y temas vistos
+  - Gestionar contenido de clase
+
+✓ Módulo Reuniones:
+  - Profesores crean reuniones para secciones
+  - Representantes confirman asistencia
+  - Control de attendance (asistencia)
+
+✓ Módulo Representante:
+  - Ver información de estudiantes
+  - Acceso a solicitudes y documentos
+  - Centro comunicativo con profesores
+
+✓ Otros Módulos:
+  - Noticias institucionales
+  - Pasantías y prácticas
+  - Labor social y voluntariado
+  - Centro de ayuda con chatbot
+  - Generación de códigos QR para asistencia
+
+
+PREGUNTAS FRECUENTES
+================================================================================
+
+P: ¿Qué hago si no puedo crear reuniones?
+R: Verifica que hayas iniciado sesión como Profesor o Administrador.
+   Si aún tienes problemas, limpia la BD nuevamente.
+
+P: ¿Por qué algunos módulos no carga?
+R: Accede a limpiar-bd.php para resetear completamente la base de datos.
+
+P: ¿Puedo cambiar las contraseñas?
+R: Las contraseñas están en login.php. Puedes editarlas directamente.
+
+P: ¿Cómo agrego más secciones?
+R: En el módulo Profesor, hay un botón "Crear Sección".
+   En Reuniones, selecciona de la lista predefinida.
+
+P: ¿Se guardan todos los datos?
+R: Sí, todo se guarda en la base de datos MySQL.
+
+
+SOPORTE
+================================================================================
+
+Si encuentras bugs o tienes sugerencias:
+1. Revisa la documentación en los archivos .md
+2. Verifica que hayas limpiado la BD correctamente
+3. Intenta recargar la página
+4. Si persiste, contacta a soporte técnico
+
+
+================================================================================
+Versión: 2.0
+Última actualización: Enero 2025
+================================================================================

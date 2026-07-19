@@ -1,0 +1,93 @@
+INSTRUCCIONES PARA USAR EL SISTEMA LICEO
+=========================================
+
+1. INICIALIZAR LA BASE DE DATOS
+   ▪ Abre en tu navegador: http://localhost/liceo/init-db.php
+   ▪ Esto creará todas las tablas necesarias en la base de datos
+   ▪ Deberías ver un mensaje "BASE DE DATOS INICIALIZADA CORRECTAMENTE"
+
+2. CREDENCIALES DE PRUEBA
+   
+   PROFESOR:
+   - Usuario: profesor
+   - Contraseña: profesor123
+   
+   ESTUDIANTE:
+   - Usuario: estudiante
+   - Contraseña: estudiante123
+   
+   ADMINISTRADOR:
+   - Usuario: admin
+   - Contraseña: admin123
+   
+   REPRESENTANTE:
+   - Usuario: representante
+   - Contraseña: representante123
+
+3. ACCEDER AL SISTEMA
+   ▪ Ve a: http://localhost/liceo/login.php
+   ▪ Ingresa cualquiera de los usuarios anteriores
+   ▪ Según el rol, serás dirigido a diferentes secciones
+
+4. FUNCIONALIDADES DEL PROFESOR
+   
+   Módulo: http://localhost/liceo/modulos/profesor.php
+   
+   ▪ CREAR SECCIONES:
+     - Click en "Nueva Sección"
+     - Ingresa el nombre (ej: 5to A, 3ero B, etc)
+     - Ingresa el grado (opcional)
+   
+   ▪ VER ACTIVIDADES DE UNA SECCIÓN:
+     - Haz click en "Ver Actividades" en cualquier sección
+     - Aparecerá un formulario para agregar actividades
+   
+   ▪ AGREGAR ACTIVIDADES:
+     - Nombre de la Actividad (ej: Ecuaciones cuadráticas)
+     - Descripción (qué harán los estudiantes)
+     - Temas Vistos en Clase (lista de temas impartidos)
+     - Fecha de Evaluación
+   
+   ▪ GESTIONAR TAREAS:
+     - Agregar tareas a las secciones
+     - Ver tareas registradas
+     - Eliminar tareas
+   
+   ▪ PUBLICAR MATERIAL:
+     - Agregar material de clase con contenido
+     - Listar todo el material publicado
+     - Eliminar material si es necesario
+   
+   ▪ PROGRAMAR EXÁMENES:
+     - Crear exámenes con fecha, hora y lugar
+     - Ver exámenes programados
+     - Eliminar exámenes
+
+5. FUNCIONALIDADES DEL ESTUDIANTE
+   
+   Dashboard: http://localhost/liceo/inicio-estudiante.php
+   
+   ▪ Ver tareas pendientes de su sección
+   ▪ Acceder a material de clase publicado
+   ▪ Ver calendario de exámenes programados
+   ▪ Ver su desempeño académico (cuando haya calificaciones)
+   ▪ Ver su asistencia en clase
+
+6. NOTAS IMPORTANTES
+   
+   ▪ Las secciones son DINÁMICAS - El profesor puede crear las que necesite
+   ▪ Las actividades se vinculan a secciones específicas
+   ▪ Todos los datos se guardan en la base de datos MySQL
+   ▪ La base de datos se crea automáticamente en init-db.php
+
+7. SOLUCIÓN DE ERRORES
+   
+   Si aparece error "Table doesn't exist":
+   - Accede nuevamente a http://localhost/liceo/init-db.php
+   - Esto recreará las tablas faltantes
+   
+   Si el login no funciona:
+   - Verifica que ingresaste el usuario y contraseña correctos
+   - Los usuarios están listados arriba
+
+¡Disfruta usando el sistema!
